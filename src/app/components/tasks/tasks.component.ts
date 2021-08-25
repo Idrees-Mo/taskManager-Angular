@@ -1,7 +1,6 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { TASKS } from 'src/app/mock-data';
-import { SharedService } from 'src/app/services/shared.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { Task } from 'src/app/shared/models/Task';
 
 @Component({
@@ -10,11 +9,23 @@ import { Task } from 'src/app/shared/models/Task';
   styleUrls: ['./tasks.component.css'],
 })
 export class TasksComponent implements OnInit {
-  tasks: Task[] = TASKS;
+  tasks: Task[];
 
   constructor(private sharedService: SharedService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tasks = this.sharedService.getTasks();
+  }
+
+  onAddTask() {
+    console.log('adding new task');
+  }
+  onRemoveTask() {
+    this.tasks = this.tasks.filter((task) => !task.selected);
+  }
+  onGenrateTask() {
+    console.log('genrating tasks');
+  }
 
   onDrop(event: CdkDragDrop<Task[]>) {
     this.sharedService.drop(event);

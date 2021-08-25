@@ -1,6 +1,6 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { Component, Input, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/services/shared.service';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { List } from 'src/app/shared/models/List';
 import { Task } from 'src/app/shared/models/Task';
 
@@ -18,5 +18,10 @@ export class ListItemComponent implements OnInit {
 
   onDrop(event: CdkDragDrop<Task[]>) {
     this.shareService.drop(event);
+  }
+
+  eventCheck(event: any) {
+    this.list.selected = !this.list.selected;
+    this.list.tasks.forEach((task) => (task.selected = event.checked));
   }
 }

@@ -1,4 +1,8 @@
 <mat-card class="item">
   <p>{{ task.title }}</p>
-  <mat-checkbox color="primary"></mat-checkbox>
+  <mat-checkbox
+    color="primary"
+    [checked]="task.selected"
+    (change)="eventCheck()"
+  ></mat-checkbox>
 </mat-card>

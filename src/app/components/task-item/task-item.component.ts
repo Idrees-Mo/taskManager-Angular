@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/shared/models/Task';
 
 @Component({
@@ -8,8 +8,14 @@ import { Task } from 'src/app/shared/models/Task';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: Task;
+  // @Output() onToggleTask: EventEmitter<Task> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  eventCheck() {
+    this.task.selected = !this.task.selected;
+    // this.onToggleTask.emit(this.task);
+  }
 }

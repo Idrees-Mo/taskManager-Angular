@@ -15,6 +15,11 @@
     ></app-task-item>
   </div>
   <mat-action-row class="action">
-    <mat-checkbox color="primary">Select List</mat-checkbox>
+    <mat-checkbox
+      color="primary"
+      [checked]="list.selected"
+      (change)="eventCheck($event)"
+      >Select List</mat-checkbox
+    >
   </mat-action-row>
 </mat-expansion-panel>

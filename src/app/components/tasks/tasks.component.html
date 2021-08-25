@@ -14,7 +14,11 @@
   ></app-task-item>
 </div>
 <div class="buttons-row">
-  <button mat-raised-button class="btn">Add Item</button>
-  <button mat-raised-button class="btn">Remove Item</button>
-  <button mat-raised-button class="btn">Genrate</button>
+  <button mat-raised-button class="btn" (click)="onAddTask()">Add Task</button>
+  <button mat-raised-button class="btn" (click)="onRemoveTask()">
+    Remove Task
+  </button>
+  <button mat-raised-button class="btn" (click)="onGenrateTask()">
+    Genrate
+  </button>
 </div>
