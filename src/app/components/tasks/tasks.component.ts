@@ -41,7 +41,14 @@ export class TasksComponent implements OnInit {
     this.tasks = this.tasks.filter((task) => !task.selected);
   }
   onGenrateTask() {
-    console.log('genrating tasks');
+    let characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    let chaactersLength = characters.length;
+
+    for (let i = 0; i < 5; i++) {
+      result += characters.charAt(Math.floor(Math.random() * chaactersLength));
+    }
+    this.tasks.push({ title: result });
   }
 
   onDrop(event: CdkDragDrop<Task[]>) {
