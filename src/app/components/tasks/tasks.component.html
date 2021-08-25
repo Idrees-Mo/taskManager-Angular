@@ -1,5 +1,8 @@
-<h1>Tasks Component</h1>
+<mat-toolbar color="primary">
+  <span class="title">TASKS</span>
+</mat-toolbar>
 <div
+  class="tasks-container"
   cdkDropList
   [cdkDropListData]="tasks"
   (cdkDropListDropped)="onDrop($event)"
@@ -9,4 +12,9 @@
     [task]="task"
     cdkDrag
   ></app-task-item>
+</div>
+<div class="buttons-row">
+  <button mat-raised-button class="btn">Add Item</button>
+  <button mat-raised-button class="btn">Remove Item</button>
+  <button mat-raised-button class="btn">Genrate</button>
 </div>

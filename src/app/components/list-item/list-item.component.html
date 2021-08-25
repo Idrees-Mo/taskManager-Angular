@@ -1,10 +1,20 @@
-<div>
-  <h3>{{ list.title }}</h3>
+<mat-expansion-panel class="main">
+  <mat-expansion-panel-header>
+    <mat-panel-title class="title">{{ list.title }}</mat-panel-title>
+  </mat-expansion-panel-header>
   <div
+    class="content"
     cdkDropList
     [cdkDropListData]="list.tasks"
     (cdkDropListDropped)="onDrop($event)"
   >
-    <div *ngFor="let task of list.tasks" cdkDrag>{{ task.title }}</div>
+    <app-task-item
+      *ngFor="let task of list.tasks"
+      [task]="task"
+      cdkDrag
+    ></app-task-item>
   </div>
-</div>
+  <mat-action-row class="action">
+    <mat-checkbox color="primary">Select List</mat-checkbox>
+  </mat-action-row>
+</mat-expansion-panel>

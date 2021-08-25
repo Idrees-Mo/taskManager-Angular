@@ -1,2 +1,10 @@
-<h1>Lists Component</h1>
-<app-list-item *ngFor="let list of lists" [list]="list"></app-list-item>
+<mat-toolbar color="primary">
+  <span class="title">Lists</span>
+</mat-toolbar>
+<div class="lists-container">
+  <app-list-item *ngFor="let list of lists" [list]="list"></app-list-item>
+</div>
+<div class="buttons-row">
+  <button mat-raised-button class="btn">Add List</button>
+  <button mat-raised-button class="btn">Remove List</button>
+</div>
