@@ -7,6 +7,7 @@
   [cdkDropListData]="tasks"
   (cdkDropListDropped)="onDrop($event)"
 >
+  <p *ngIf="!tasks.length">Please add tasks by clicking the Add Task button.</p>
   <app-task-item
     *ngFor="let task of tasks"
     [task]="task"

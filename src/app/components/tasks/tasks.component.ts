@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared/services/shared.service';
 import { Task } from 'src/app/shared/models/Task';
 
+import { MatDialog } from '@angular/material/dialog';
+import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
+
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -11,14 +14,28 @@ import { Task } from 'src/app/shared/models/Task';
 export class TasksComponent implements OnInit {
   tasks: Task[];
 
-  constructor(private sharedService: SharedService) {}
+  constructor(
+    private sharedService: SharedService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.tasks = this.sharedService.getTasks();
   }
 
-  onAddTask() {
-    console.log('adding new task');
+  onAddTask(): void {
+    const dialogRef = this.dialog.open(TaskDialogComponent, {
+      width: '270px',
+      data: {
+        task: {},
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result === 'cancelled') {
+        return;
+      }
+      this.tasks.push(result.task);
+    });
   }
   onRemoveTask() {
     this.tasks = this.tasks.filter((task) => !task.selected);

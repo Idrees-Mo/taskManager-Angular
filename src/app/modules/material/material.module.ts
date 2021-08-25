@@ -5,6 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -13,7 +16,9 @@ const MaterialComponents = [
   MatCardModule,
   MatExpansionModule,
   MatCheckboxModule,
-  DragDropModule,
+  MatDialogModule,
+  FormsModule,
+  MatInputModule,
 ];
 
 @NgModule({
