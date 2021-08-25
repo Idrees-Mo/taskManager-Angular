@@ -6,7 +6,7 @@ export const TASKS = [
 ];
 
 export const LISTS = [
-  { id: 1, title: 'Urgent', tasks: [] },
-  { id: 2, title: 'High Priority', tasks: [] },
-  { id: 3, title: 'Low Priority', tasks: [] },
+  { id: 1, title: 'Urgent', tasks: [{ title: 'test-1 task' }] },
+  { id: 2, title: 'High Priority', tasks: [{ title: 'test-2 task' }] },
+  { id: 3, title: 'Low Priority', tasks: [{ title: 'test-3 task' }] },
 ];

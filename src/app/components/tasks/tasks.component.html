@@ -1,2 +1,12 @@
 <h1>Tasks Component</h1>
-<app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
+<div
+  cdkDropList
+  [cdkDropListData]="tasks"
+  (cdkDropListDropped)="onDrop($event)"
+>
+  <app-task-item
+    *ngFor="let task of tasks"
+    [task]="task"
+    cdkDrag
+  ></app-task-item>
+</div>
