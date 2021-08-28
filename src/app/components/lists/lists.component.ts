@@ -31,9 +31,6 @@ export class ListsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result === 'cancelled') {
         return;
-      } else if (result !== result.list.title) {
-        alert('List Title is required');
-        return;
       }
       this.lists.push({ ...result.list, tasks: [] });
     });
