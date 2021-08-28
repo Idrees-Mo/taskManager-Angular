@@ -33,9 +33,6 @@ export class TasksComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result === 'cancelled') {
         return;
-      } else if (result !== result.task.title) {
-        alert('Task Title is required');
-        return;
       }
       this.tasks.push(result.task);
     });

@@ -22,17 +22,15 @@ body {
   max-height: 84%;
   overflow: auto;
 }
-
+.lists-container {
+  border-left: 5px solid rgb(230, 230, 230);
+}
 .buttons-row {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   height: 8%;
-  align-items: center;
   background-color: rgb(230, 230, 230);
-
   margin-bottom: 0;
-}
-.btn {
-  margin: 0 5px;
 }
