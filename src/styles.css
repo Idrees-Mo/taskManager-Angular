@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title {
+  margin: 0 auto;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.lists-container,
+.tasks-container {
+  padding: 0 10px;
+  min-height: 84%;
+  max-height: 84%;
+  overflow: auto;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 8%;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+
+  margin-bottom: 0;
+}
+.btn {
+  margin: 0 5px;
+}

@@ -29,3 +29,7 @@
   width: 64%;
   background-color: rgb(250, 250, 250);
 }
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
