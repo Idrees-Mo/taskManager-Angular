@@ -31,11 +31,13 @@ export class ListsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result === 'cancelled') {
         return;
+      } else if (Object.keys(result.list).length === 0) {
+        alert('title is required');
+        return;
       }
       this.lists.push({ ...result.list, tasks: [] });
     });
   }
-
   onRemoveList() {
     this.lists = this.lists.filter((list) => !list.selected);
   }
