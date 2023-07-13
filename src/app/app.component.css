@@ -1,6 +1,7 @@
 .main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   width: 100%;
   height: 100%;
   background-color: #b9b9b9;
@@ -32,4 +33,8 @@
 
 .cdk-drag-placeholder {
   opacity: 0;
+}
+
+.title {
+  text-align: center;
 }
